@@ -25,8 +25,10 @@ def Initialization(num, model):
 
 
 datas = Datas()
+#节点数量
 node_num = 5
 model = Model()
+#全局迭代次数
 global_steps = 100
 
 if __name__ == '__main__':
