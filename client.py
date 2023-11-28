@@ -18,7 +18,10 @@ class Client:
         self.dataset = dataset
         self.dataloader = DataLoader(self.dataset, batch_size=batchsize, shuffle=True, num_workers=num_workers)
 
-    def train(self,epochs):
+    def train(self, epochs):
+        """
+        :param epochs:在本地训练时迭代的轮数
+        """
         total_steps = len(self.dataloader) * epochs
         progress_bar = tqdm(total=total_steps, position=0, leave=True)  # 设置 leave=True 保留进度条在终端
         for epoch in range(epochs):
