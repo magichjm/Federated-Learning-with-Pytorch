@@ -14,6 +14,9 @@ class Client:
         self.dataset = None
         self.dataloader = None
 
+
+
+
     def set_trian_data(self, dataset, batchsize=64, num_workers=4):
         self.dataset = dataset
         self.dataloader = DataLoader(self.dataset, batch_size=batchsize, shuffle=True, num_workers=num_workers)
