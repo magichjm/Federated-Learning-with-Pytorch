@@ -19,7 +19,7 @@
 
 ### 算法描述
 
-![image-20231128154608579](C:\Users\Juan365\AppData\Roaming\Typora\typora-user-images\image-20231128154608579.png)
+![image-20231128154608579](https://github.com/magichjm/Federated-Learning-Credit-Card-Fraud-Detection-with-Pytorch/process.png)
 
 ### 上手指南
 
