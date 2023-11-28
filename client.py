@@ -36,6 +36,9 @@ class Client:
                 progress_bar.set_postfix({'id': self.id, 'Epoch': epoch, 'Step': step, 'Loss': loss.item()})
         progress_bar.close()
 
+    def get_len(self):
+        return len(self.dataset)
+
     def get_model(self):
         # 返回本地模型的权重
         return self.local_model.state_dict()

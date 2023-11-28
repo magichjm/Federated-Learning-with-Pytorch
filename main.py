@@ -37,6 +37,6 @@ if __name__ == '__main__':
         for client in clients:
             client.train(epochs=1)
         server.average(clients)
-        if global_step % 10 == 0:
+        if global_step % 1 == 0:
             loss, accuracy = server.test()
             print(f'global_step:{global_step}\tloss:{loss.item()}\taccuracy:{accuracy}')

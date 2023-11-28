@@ -14,12 +14,18 @@ class Server:
 
     def average(self, clients):
         client_models = [client.get_model() for client in clients]
-        # 聚合客户端模型权重的平均值
-        avg_weights = {}
-        for key in client_models[0]:
-            avg_weights[key] = torch.stack([client_model[key] for client_model in client_models]).float().mean(0)
+        client_lens = [client.get_len() for client in clients]
+        # 计算每个客户端的权重
+        weights = [length / sum(client_lens) for length in client_lens]
+        # 初始化平均权重字典
+        avg_weights = {key: torch.zeros_like(client_models[0][key]).float() for key in client_models[0]}
+        # 加权平均每个客户端的模型参数
+        for i, client_model in enumerate(client_models):
+            for key in avg_weights:
+                avg_weights[key] += weights[i] * client_model[key]
         # 更新全局模型权重
         self.global_model.load_state_dict(avg_weights)
+        # 将全局模型更新到每个客户端
         for client in clients:
             client.update_global_model(self.global_model)
 
