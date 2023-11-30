@@ -40,9 +40,9 @@ class Client:
         return len(self.dataset)
 
     def get_model(self):
-        # 返回本地模型的权重
+        # 返回本地模型参数
         return self.local_model.state_dict()
 
     def update_global_model(self, global_model):
-        # 更新本地模型的权重
+        # 更新本地模型参数
         self.local_model.load_state_dict(global_model.state_dict())

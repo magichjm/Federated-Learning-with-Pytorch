@@ -34,7 +34,7 @@ class Server:
         self.dataloader = DataLoader(self.dataset, batch_size=len(dataset), shuffle=True, num_workers=num_workers)
 
     def get_model(self):
-        # 返回本地模型的权重
+        # 返回全局模型参数
         return self.global_model.state_dict()
 
     def test(self):
