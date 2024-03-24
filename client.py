@@ -4,7 +4,6 @@ from torch.utils.data import DataLoader
 from torch.nn import functional as F
 from tqdm import tqdm
 
-
 class Client:
     def __init__(self, model, id):
         self.id = id
