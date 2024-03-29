@@ -1,4 +1,4 @@
-# Federated-Learning-framework-with-Pytorch
+# Federated-Learning-Credit-Card-Fraud-Detection-with-Pytorch
 
 基于fedavg联邦学习算法与smote过采样对联邦信用卡欺诈交易检测任务进行了优化，其中fedavg算法通过创建Server与Clients对象来模拟真实场景下的服务器<-->节点的双向参数传递。
 
